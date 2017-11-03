@@ -1,19 +1,14 @@
 # Requirements Document 1
 ## Boards
 
-Discussion Board
-
+### Discussion Board
 https://trello.com/b/V6k6l2pK/discussion
 
-Features Board
-
+### Features Board
 https://trello.com/b/BpkBGo2O/features
 
-Implementation Board
-
+### Implementation Board
 https://trello.com/b/Z59Tb3aZ/implementation
 
-Investigations Board
-
+### Investigations Board
 https://trello.com/b/CKJ8cEde/investigations
-
