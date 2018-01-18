@@ -1,0 +1,17 @@
+<h1>Questions</h1>
+
+    <a href="/questions/new">Add Question</a>
+    <br><br>    
+
+    <% for(var i = 0; i < data.length; i++){ %> 
+        <div>    
+            <p><a href="/questions/<%= data[i]["id"]; %>"> <%= data[i]["id"]; %></a></p>
+            <p><%= data[i]["questionType"]; %></p>
+            <p><%= data[i]["questionText"]; %></p>
+            <p><%= data[i]["questionChoices"]; %></p>
+        </div>
+
+        <hr>
+     <% } %>
+
+<a href="/">&laquo back</a>

@@ -1,0 +1,19 @@
+<h1>New Question</h1>
+
+<form method="post" action="/questions">
+    <p>Question Name:</p>
+    <input type="text" name="questionName">
+
+    <p>Question Type:</p>
+    <select name="questionType">
+        <% for(var i = 0; i < data.length; i++){ %>
+            <option><%= data[i]["questionType"]; %></option>    
+        <% } %>    
+    </select>
+
+    <p>Question Choices</p>
+    <input type="text" name="questionChoice">
+
+    <br><br><br>
+    <input type="submit" value="Add Question">
+</form>

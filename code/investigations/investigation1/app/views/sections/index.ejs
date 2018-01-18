@@ -1,0 +1,14 @@
+<h1>Survey Sections</h1>
+
+    
+    <% for(var i = 0; i < data.length; i++){ %> 
+        <div>    
+            <p><a href="/surveySections/<%= data[i]["id"]; %>"> <%= data[i]["id"]; %></a></p>
+            <p><%= data["introductionMessage"]; %></p>
+            <p><%= data["questionIds"]; %></p>
+            <p><%= data["heading"]; %></p>
+        </div>
+        <hr>
+     <% } %>
+
+<a href="/">&laquo back</a>

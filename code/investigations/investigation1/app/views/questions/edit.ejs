@@ -1,0 +1,28 @@
+<h1>Edit Question</h1>
+
+        <form action="/questions/<%= data.question['id']; %>/edit" method="post">
+
+            <input type="hidden" name="questionId" value="<%= data.question['id']; %>"> 
+            
+            <p>Question Name:</p>
+            <input type="text" name="questionName" value="<%= data.question['questionText']; %>">
+        
+            <p>Question Type:</p>
+            <select name="questionType">
+
+                <% 
+                var questionTypes = data.questionType
+                for(var i = 0; i < questionTypes.length; i++){ %>
+                    <option><%= questionTypes[i]["questionType"]; %></option>    
+                <% } %>    
+            </select>
+        
+            <p>Question Choices</p>
+            <input type="text" name="questionChoice">
+        
+            <br><br><br>
+            <input type="submit" value="Update Question">
+
+        </form>
+
+<a href="/questions/<%= data.question['id']; %>">&laquo back</a>

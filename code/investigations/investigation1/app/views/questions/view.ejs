@@ -1,0 +1,13 @@
+<h1>Question</h1>
+
+        <div>    
+            <p><%= data["id"]; %></p>
+            <p><%= data["questionType"]; %></p>
+            <p><%= data["questionText"]; %></p>
+            <p><%= data["questionChoices"]; %></p>
+
+        </div>
+
+<a href="/questions/<%= data["id"]; %>/edit">Edit</a> | <a href="/questions/<%= data["id"]; %>/delete">Delete</a>
+<br><br>
+<a href="/questions">&laquo back</a>

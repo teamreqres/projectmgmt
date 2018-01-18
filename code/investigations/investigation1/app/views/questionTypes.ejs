@@ -1,0 +1,12 @@
+<h1>Question Types</h1>
+
+    
+    <% for(var i = 0; i < data.length; i++){ %> 
+        <div>    
+            <p><a href="/questionTypes/<%= data[i]["id"]; %>"> <%= data[i]["id"]; %></a></p>
+            <p><%= data[i]["questionType"]; %></p>
+        </div>
+        <hr>
+     <% } %>
+
+<a href="/">&laquo back</a>
