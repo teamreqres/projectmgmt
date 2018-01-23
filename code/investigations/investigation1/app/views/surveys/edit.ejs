@@ -1,0 +1,29 @@
+<h1>Edit Survey</h1>
+
+<form method="post" action="/surveys/<%= data.survey['id']; %>/edit">
+    
+    <input type="hidden" name="surveyId" value="<%= data.survey['id']; %>"
+    
+    <p>Survey Name:</p>
+    <input type="text" name="surveyName" value="<%= data.survey['surveyName']; %>">
+
+    <p>Introduction Message:</p>
+    <input type="text" name="introMessage" value="<%= data.survey['introductionMessage']; %>">
+
+    <p>Completion Message:</p>
+    <input type="text" name="compMessage" value="<%= data.survey['completionMessage']; %>">
+
+    <p>Section IDs:</p>
+    <select name="sectionIDs">
+        <% 
+        var sectionIds = data.section;
+        for(var i = 0; i < sectionIds.length; i++){ %>
+            <option><%= sectionIds[i]["id"]; %></option>    
+        <% } %>    
+    </select>
+
+    <br><br><br>
+    <input type="submit" value="Edit Survey">
+</form>
+
+<a href="/surveys/<%= data.survey['id']; %>">&laquo back</a>

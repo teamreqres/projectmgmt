@@ -1,0 +1,14 @@
+<h1>Delete Section</h1>
+
+<form method="post" action="/surveySections/<%= data['id']; %>/delete">
+    
+    <input type="hidden" name="surveySectionId" value="<%= data['id']; %>"> 
+            
+    <p>Do you want to delete the section: <strong>"<%= data['heading']; %>"</strong>?</p>
+
+    <br><br>
+    <input type="submit" value="Delete Section">
+    
+</form>
+
+<a href="/surveySections/<%= data['id']; %>">&laquo back</a>

@@ -1,0 +1,28 @@
+<h1>Edit Section</h1>
+
+        <form action="/surveySections/<%= data.section['id']; %>/edit" method="post">
+
+            <input type="hidden" name="sectionId" value="<%= data.section['id']; %>"> 
+            
+            <p>Intro Message:</p>
+            <input type="text" name="introMessage" value="<%= data.section['introductionMessage']; %>">
+        
+            <p>Question IDs:</p>
+            <select name="questionID">
+
+                <% 
+                var questionIds = data.question;
+                for(var i = 0; i < questionIds.length; i++){ %>
+                    <option><%= questionIds[i]["id"]; %></option>    
+                <% } %>    
+            </select>
+        
+            <p>Heading</p>
+            <input type="text" name="heading" value="<%= data.section['heading']; %>">
+        
+            <br><br><br>
+            <input type="submit" value="Update Section">
+
+        </form>
+
+<a href="/surveySections/<%= data.section['id']; %>">&laquo back</a>

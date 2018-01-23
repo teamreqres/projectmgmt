@@ -1,10 +1,14 @@
 <h1>Survey</h1>
 
         <div>    
+            <p><%= data["surveyName"]; %></p>
             <p><%= data["id"]; %></p>
             <p><%= data["introductionMessage"]; %></p>
             <p><%= data["completionMessage"]; %></p>
             <p><%= data["sectionId"]; %></p>
         </div>
+
+<a href="/surveys/<%= data["id"]; %>/edit">Edit</a> | <a href="/surveys/<%= data["id"]; %>/delete">Delete</a>
+<br><br>
 
 <a href="/surveys">&laquo back</a>

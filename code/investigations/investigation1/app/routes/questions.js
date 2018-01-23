@@ -18,7 +18,7 @@ router.get('/questions', function(req, res){
             res.render("../views/questions/index", {data});
           }
         }).auth(user, pass);
-    });
+});
 
 // POST new question
 router.post('/questions', function(req, res){
@@ -36,7 +36,6 @@ router.post('/questions', function(req, res){
     'url': 'https://reqressurveys.restlet.net/v1/questions',
     'json': newQuestion
   }, function (error, response, body) {
-          console.log(newQuestion);
           if(error){
             res.send(error); // Print the error if one occurred and handle it
           } else if(response.statusCode != 200) {

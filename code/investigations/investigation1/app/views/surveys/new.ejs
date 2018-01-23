@@ -1,0 +1,22 @@
+<h1>New Survey</h1>
+
+<form method="post" action="/surveys">
+    <p>Survey Name:</p>
+    <input type="text" name="surveyName">
+
+    <p>Introduction Message:</p>
+    <input type="text" name="introMessage">
+
+    <p>Completion Message:</p>
+    <input type="text" name="compMessage">
+
+    <p>Section IDs:</p>
+    <select name="sectionIDs">
+        <% for(var i = 0; i < data.length; i++){ %>
+            <option><%= data[i]["id"]; %></option>    
+        <% } %>    
+    </select>
+
+    <br><br><br>
+    <input type="submit" value="Add Survey">
+</form>

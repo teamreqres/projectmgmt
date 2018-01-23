@@ -1,0 +1,19 @@
+<h1>New Section</h1>
+
+<form method="post" action="/surveySections">
+    <p>Intro Message:</p>
+    <input type="text" name="introMessage">
+
+    <p>Question IDs:</p>
+    <select name="questionID">
+        <% for(var i = 0; i < data.length; i++){ %>
+            <option><%= data[i]["id"]; %></option>    
+        <% } %> 
+    </select>
+
+    <p>Heading</p>
+    <input type="text" name="heading">
+
+    <br><br><br>
+    <input type="submit" value="Add Section">
+</form>
