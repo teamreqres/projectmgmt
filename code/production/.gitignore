@@ -1,0 +1,7 @@
+node_modules
+package-lock.json
+public/.sass-cache
+public/css
+public/js/main.min.js
+public/js/components.min.js
+public/js/editors.min.js
