@@ -1,0 +1,61 @@
+<%- include('../partials/header', {title: "Questions"}); %>
+
+<h1><button data-toggle="sidebarToggle" class="btn btn-link btn-icon text-dark d-inline-block d-md-none"><i class="fa fa-bars" aria-hidden="true"></i><span class="sr-only">Menu</span></button> <%= locals.question ? question['name'] : 'New Question'; %></h1>
+
+<form id="questionEditor" class="row" action="/questions/<%= locals.question ? question['id'] : 'new' %>" method="post"
+<%- locals.question ? 'data-id="' + question['id']+ '"' : '' %>>
+  <div class="col">
+
+    <div class="editor-loading align-items-center justify-content-center" style="
+      display: flex;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 10;">
+        <div><i class="fa fa-cog fa-spin fa-5x fa-fw"></i></div>
+
+        <span class="sr-only">Loading...</span>
+      </div>
+
+    <div class="form-group">
+      <label for="questionName">Question Name</label>
+      <input type="text" class="form-control" id="questionName" name="questionName" placeholder="Question name" value="<%= locals.question ? question['name'] : '' %>">
+    </div>
+
+    <div class="form-group">
+      <label for="questionType">Question Type</label>
+      <select class="form-control" id="questionType" name="questionType"></select>
+    </div>
+
+    <div id="questionChoices" class="form-group">
+      <label for="questionChoices">Question Choices</label>
+      <div id="questionChoicesContainer"></div>
+
+      <button class="btn btn-success" type="button" data-create>Add Question Choice</button>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="card card-gradient-purple mb-3">
+      <div class="card-header">
+        Actions
+      </div>
+      <div class="card-body">
+        <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i> <%= locals.question ? 'Update' : 'Create' %></button>
+        <% if (locals.question) { %>
+          <a href="/questions/<%= question['id']; %>/delete" class="btn text-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+        <% } %>
+      </div>
+    </div>
+
+    <% if (locals.question) { %>
+      <%- include('../partials/assignedItems'); %>
+    <% } %>
+
+  </div>
+</form>
+
+<%- include('../partials/footer'); %>

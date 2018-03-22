@@ -1,0 +1,10 @@
+@mixin linear-gradient($primary, $secondary, $angle: 0deg) {
+	background: $primary; /* Old browsers */
+	background: -moz-linear-gradient((90-$angle), $secondary 0%, $primary 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient((90-$angle), $secondary 0%, $primary 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(($angle), $secondary 0%, $primary 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+@mixin theme-gradient($theme) {
+	@include linear-gradient(nth($theme, 1), nth($theme, 2), 90deg);
+}

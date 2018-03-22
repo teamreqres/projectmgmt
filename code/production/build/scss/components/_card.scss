@@ -1,0 +1,19 @@
+.card {
+	border-radius: 0;
+	&-angled {
+		transform: skewX(-5deg);
+		> * {
+			transform: skewX(5deg);
+		}
+	}
+
+  @each $theme, $gradient in $gradients {
+    &-gradient-#{$theme} {
+      @include theme-gradient($gradient);
+			color: white;
+			.card-body {
+				background-color: rgba(255, 255, 255, 0.75)
+			}
+    }
+  }
+}

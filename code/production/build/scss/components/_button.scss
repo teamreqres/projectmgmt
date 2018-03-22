@@ -1,0 +1,44 @@
+.btn {
+  border-radius: 0;
+  &-angled {
+		transform: skewX(-5deg);
+		> span {
+      display: block;
+			transform: skewX(5deg);
+		}
+  }
+
+  &-icon {
+    line-height: 2rem;
+    font-size: 1.5rem
+  }
+
+  @each $theme, $gradient in $gradients {
+    &-gradient-#{$theme} {
+      @include theme-gradient($gradient);
+      color: white;
+      position: relative;
+      z-index: 100;
+  
+      &:before {
+        border-radius: inherit;
+        background-color: nth($gradient, 2);
+        content: '';    
+        height: 100%;
+        position: absolute;
+        top: 0; left: 0;
+        opacity: 0;
+        width: 100%;
+        z-index: -100;
+        transition: opacity 0.45s;
+      }
+      &:hover {
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  
+}

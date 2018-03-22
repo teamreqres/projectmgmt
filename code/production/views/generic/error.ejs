@@ -1,0 +1,8 @@
+<%- include('../partials/header', {title: 'Error', minimalLayout: true}); %>
+
+<h1 class="display-3"><span class="badge badge-danger"><%= errorCode; %></span><br> <%= message; %></h1>
+<% if (locals.details) { %><p class="lead"><%= details; %></p><% } %>
+<% if (locals.stack) { %><pre><code><%- stack; %></pre><% } %>
+
+
+<%- include('../partials/footer'); %>

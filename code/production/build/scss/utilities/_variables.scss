@@ -1,0 +1,17 @@
+
+
+$gradient-coral:#ff9966, #ff5e62;
+
+$gradient-turquoise:#0cebeb, #29ffc6;
+
+$gradient-purple:#4568dc, #b06ab3;
+
+$gradient-steel:#1f1c2c, #928dab;
+
+
+$gradients: (
+	'coral': $gradient-coral,
+	'turquoise': $gradient-turquoise,
+	'purple': $gradient-purple,
+	'steel': $gradient-steel,
+)

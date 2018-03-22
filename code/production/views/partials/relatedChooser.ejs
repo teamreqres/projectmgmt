@@ -1,0 +1,50 @@
+<% if(type.charAt( type.length-1 ) == "s") {
+	var singular = type.slice(0, -1);
+} else {
+	var singular = type;
+} %>
+
+<div id="relatedChooser">
+	<h2><%= type; %></h2>
+	<div id="relatedContainer"></div>
+	<div class="related-loading mb-3">
+		<i class="fa fa-circle-o-notch fa-spin fa-4x fa-fw"></i>
+		<span class="sr-only">Loading...</span>
+	</div>
+
+	<div id="addRelatedForm">
+		<div class="card mb-3">
+			<div class="card-header">
+				Add <%= singular; %>
+			</div>
+			<div class="card-body row">
+				<div class="col">
+					<h5>Create New <%= singular; %></h5>
+					<div class="form-group">
+						<label for="new<%= singular; %>"><%= singular; %> Name</label>
+						<input type="text" class="form-control" name="new<%= singular; %>" id="new<%= singular; %>" placeholder="<%= singular; %> Name">
+					</div>
+					<button id="create<%= singular; %>" type="submit" class="btn btn-success">Create</button>
+				</div>
+				<div class="col">
+					<h5>Choose an Existing <%= singular; %></h5>
+					<div class="form-group">
+						<label for="existing<%= singular; %>"><%= singular; %> Name</label>
+
+						<select class="form-control" name="existing<%= singular; %>" id="existingChoice">
+							<option disabled>No existing <%= type.toLowerCase(); %></option>
+						</select>
+						<div class="existing-choice-loading mb-3">
+							<i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+							<span class="sr-only">Loading...</span>
+						</div>
+						
+					</div>
+					<button id="chooseExisting<%= singular; %>" type="submit" class="btn btn-success">Choose</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<button id="addRelated" type="button" class="btn btn-success">Add <%= singular; %></button>
+</div>

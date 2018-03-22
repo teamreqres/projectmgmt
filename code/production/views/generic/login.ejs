@@ -1,0 +1,20 @@
+<%- include('../partials/head', { title: "Login", bodyClass: 'login' }); %>
+
+	<div class="card card-angled card-white">
+		<img class="mb-4 mr-auto ml-auto" src="/static/images/icon.svg" alt="" width="72" height="72">
+
+		<h1 class="h3 mb-3 font-weight-normal">Login to Survey Builder</h1>
+
+		<form class="form-signin" action="/login" method="post">
+			<label for="username" class="sr-only">Username</label>
+			<input type="text" id="username" class="form-control" placeholder="Username" name="username" required autofocus>
+
+			<label for="password" class="sr-only">Password</label>
+			<input type="password" id="password" class="form-control" placeholder="Password" name="password" required>
+
+			<button class="btn btn-lg btn-gradient-purple btn-block" type="submit">Login</button>
+		</form>
+		<!-- <p class="mt-5 mb-3 text-muted">reqRes</p> -->
+	</div>
+
+<%- include('../partials/foot'); %>
